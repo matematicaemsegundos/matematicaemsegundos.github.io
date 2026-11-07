@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algoritmos: a Matemática que move a tecnologia · Matemática em Segundos</title>
+<meta name="description" content="Como o GPS escolhe o caminho mais curto? Por trás da tecnologia há passos simples, e a Matemática ajuda a organizá-los.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../">Matemática em <b>Segundos</b></a>
+<nav><a href="../">Postagens</a><a href="../sobre.html">Sobre o autor</a></nav>
+</div></header>
+<main class="wrap"><article>
+<p class="meta">7 de novembro de 2026 · Professor Jonh Cleidson da Silva</p>
+<h1>Algoritmos: a Matemática que move a tecnologia</h1>
+
+<p>Você pega o celular, digita o nome da escola e toca em "Ir". Em um instante, uma linha azul aparece no mapa e uma voz diz: "Vire à direita em 200 metros". Ninguém desenhou aquele caminho só para você. Quem fez a conta foi um <strong>algoritmo</strong>.</p>
+
+<p>A palavra assusta, mas a ideia é simples: <strong>algoritmo é uma sequência de passos, em ordem, que sempre leva ao resultado certo.</strong> Se bem seguidos, os passos dão o mesmo resultado hoje, amanhã e para qualquer pessoa.</p>
+
+<h2>Você já usa algoritmos todo dia</h2>
+<p>Pense numa receita de cuscuz. Molhar a massa, acrescentar o sal, colocar na cuscuzeira, esperar o vapor. Se você seguir os passos na ordem e na medida certa, o resultado se repete. Isso é um algoritmo, e quem o escreve precisa pensar em tudo: o que fazer, em que ordem e quando parar.</p>
+<p>A diferença é que a receita é escrita para uma pessoa, e o algoritmo de um aplicativo é escrito para uma máquina. Como a máquina não adivinha nada, cada passo precisa ser exato.</p>
+
+<h2>Como o GPS escolhe o caminho</h2>
+<p>Imagine quatro pontos, A, B, C e D, ligados por ruas. Quando o aplicativo procura o caminho mais curto, ele segue uma lógica muito parecida com esta:</p>
+<div class="ex">
+<p><strong>1.</strong> Parte do ponto onde você está e anota a distância até cada ponto vizinho.</p>
+<p><strong>2.</strong> Vai até o vizinho mais próximo e, a partir dele, confere se existe um caminho melhor para os outros pontos.</p>
+<p><strong>3.</strong> Atualiza as distâncias sempre que acha um atalho.</p>
+<p><strong>4.</strong> Repete até chegar ao destino.</p>
+</div>
+<p>Esse método tem nome, <strong>algoritmo de Dijkstra</strong>, e é Matemática pura: somas, comparações e repetição. A tecnologia só faz tudo isso muito mais rápido do que qualquer pessoa.</p>
+
+<h2>O ponto principal</h2>
+<p>A tecnologia parece mágica, mas por baixo dela existem passos que a Matemática ajuda a organizar. Quem entende a ideia de algoritmo deixa de ser apenas usuário do celular e passa a entender <strong>por que</strong> ele responde como responde.</p>
+
+<h2>Agora é com você</h2>
+<p>Veja as ruas e as distâncias, em quilômetros:</p>
+<svg viewBox="0 0 320 200" role="img" aria-label="Mapa com os pontos A, B, C e D. A–B 4 km, A–C 2 km, C–B 1 km, B–D 5 km, C–D 8 km." style="width:100%;max-width:420px;height:auto;display:block;margin:10px auto">
+<g stroke="#a3aedc" stroke-width="2" fill="none">
+<line x1="40" y1="100" x2="150" y2="35"/><line x1="40" y1="100" x2="150" y2="165"/>
+<line x1="150" y1="35" x2="150" y2="165"/><line x1="150" y1="35" x2="280" y2="100"/><line x1="150" y1="165" x2="280" y2="100"/>
+</g>
+<g font-size="14" font-weight="700" fill="#fde047" text-anchor="middle">
+<text x="82" y="56">4</text><text x="82" y="156">2</text><text x="162" y="104">1</text><text x="226" y="56">5</text><text x="226" y="156">8</text>
+</g>
+<g fill="#111733" stroke="#22d3ee" stroke-width="2.5">
+<circle cx="40" cy="100" r="18"/><circle cx="150" cy="35" r="18"/><circle cx="150" cy="165" r="18"/><circle cx="280" cy="100" r="18"/>
+</g>
+<g font-size="16" font-weight="800" fill="#f1f4ff" text-anchor="middle">
+<text x="40" y="106">A</text><text x="150" y="41">B</text><text x="150" y="171">C</text><text x="280" y="106">D</text>
+</g>
+</svg>
+<ul>
+<li>A → B: 4 km</li><li>A → C: 2 km</li><li>C → B: 1 km</li><li>B → D: 5 km</li><li>C → D: 8 km</li>
+</ul>
+<p><strong>Qual é o caminho mais curto de A até D, e quantos quilômetros ele tem?</strong> Tente antes de olhar a resposta.</p>
+
+<div class="resp"><b>Resposta:</b> A → C → B → D, com <strong>8 km</strong> (2 + 1 + 5). Os outros caminhos são mais longos: A → B → D dá 9 km, e A → C → D dá 10 km. Repare que o caminho mais curto passou por um ponto que, à primeira vista, parecia um desvio.</div>
+
+<p>Se você acertou, acabou de rodar um algoritmo de verdade.</p>
+
+<p class="sig">Professor Jonh Cleidson da Silva</p>
+<p class="noprint"><a class="btn" href="../">← Todas as postagens</a> <button class="btn" onclick="window.print()">🖨️ Imprimir ou salvar em PDF</button></p>
+</article></main>
+<footer><div class="wrap">© Professor Jonh Cleidson da Silva · Matemática em Segundos</div></footer>
+</body>
+</html>

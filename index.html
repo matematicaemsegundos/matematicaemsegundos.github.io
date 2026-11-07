@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matemática em Segundos · Professor Jonh Cleidson da Silva</title>
+<meta name="description" content="Matemática explicada com clareza, exemplos reais e sem medo. Textos do Professor Jonh Cleidson da Silva.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="./">Matemática em <b>Segundos</b></a>
+<nav><a href="./">Postagens</a><a href="sobre.html">Sobre o autor</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero">
+<h1>Matemática em Segundos</h1>
+<p>Explicações claras, exemplos do dia a dia e nenhum medo. Com o Professor Jonh Cleidson da Silva.</p>
+</section>
+<p class="meta" id="status"></p>
+<div class="grid" id="lista"></div>
+</main>
+<footer><div class="wrap">© Professor Jonh Cleidson da Silva · Matemática em Segundos</div></footer>
+<script type="application/json" id="posts">
+[
+{"arquivo":"posts/2026-11-07-algoritmos-matematica-tecnologia.html","data":"2026-11-07","titulo":"Algoritmos: a Matemática que move a tecnologia","resumo":"Como o GPS escolhe o caminho mais curto? Passos simples, Matemática por baixo e um desafio para você.","cor":"--cy"}
+]
+</script>
+<script>
+(function(){
+var posts=JSON.parse(document.getElementById('posts').textContent);
+posts.sort(function(a,b){return b.data.localeCompare(a.data)});
+var el=document.getElementById('lista'),st=document.getElementById('status');
+function fmt(d){var p=d.split('-');return p[2]+'/'+p[1]+'/'+p[0]}
+function esc(s){var x=document.createElement('div');x.textContent=s;return x.innerHTML}
+if(!posts.length){el.innerHTML='<p class="empty">Ainda não há postagens. Volte em breve!</p>';return}
+st.textContent=posts.length+(posts.length==1?' postagem':' postagens');
+el.innerHTML=posts.map(function(p){return '<a class="card" style="--c:var('+p.cor+')" href="'+p.arquivo+'"><small>'+fmt(p.data)+'</small><h3>'+esc(p.titulo)+'</h3><p>'+esc(p.resumo)+'</p></a>'}).join('');
+})();
+</script>
+</body>
+</html>
