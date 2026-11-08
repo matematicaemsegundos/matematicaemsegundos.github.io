@@ -15,6 +15,16 @@ nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 10px;colo
 nav a:hover{color:var(--tx)}
 h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:.2em 0 .3em;overflow-wrap:anywhere;
 background:linear-gradient(90deg,var(--cy),var(--vi),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* Movimento no título da página inicial e na marca do topo */
+.hero h1,.brand b{background:linear-gradient(90deg,var(--cy),var(--vi),var(--pk),var(--ye),var(--li),var(--cy));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fluxo 9s linear infinite}
+.hero h1{display:inline-block;animation:fluxo 9s linear infinite,flutua 5s ease-in-out infinite;filter:drop-shadow(0 0 18px #22d3ee33)}
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"π  ∑  √  ∞  ÷  ×  %";position:absolute;right:-10px;top:6px;font-size:clamp(22px,5vw,34px);letter-spacing:.35em;white-space:nowrap;color:var(--vi);opacity:.18;pointer-events:none;animation:deriva 14s ease-in-out infinite alternate}
+.hero p{position:relative}
+@keyframes fluxo{to{background-position:250% 0}}
+@keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes deriva{from{transform:translateX(30px)}to{transform:translateX(-40px)}}
+@media (prefers-reduced-motion:reduce){.hero h1,.brand b,.hero::before{animation:none}}
 h2{color:var(--c);margin-top:1.8em;line-height:1.25}
 p{overflow-wrap:anywhere}
 .hero{padding:44px 0 18px}
@@ -37,7 +47,8 @@ footer{border-top:1px solid var(--line);color:var(--mut);padding:22px 0 34px;fon
 @media(max-width:640px){body{font-size:16px;background-attachment:scroll}.hero{padding-top:28px}}
 @media(max-width:360px){.grid{grid-template-columns:minmax(0,1fr)}}
 @page{size:A4;margin:12mm}
-@media print{:root{--bg:#fff;--panel:#fff;--panel2:#f4f4f4;--line:#bbb;--tx:#111;--mut:#444;--c:#0a5}
+@media print{.hero h1,.brand b,.hero::before{animation:none}.hero::before{display:none}
+:root{--bg:#fff;--panel:#fff;--panel2:#f4f4f4;--line:#bbb;--tx:#111;--mut:#444;--c:#0a5}
 body{background:#fff;font-size:12pt}header.top,.noprint,footer{display:none}
 h1{color:#111;background:none;-webkit-background-clip:initial;background-clip:initial}
 .card,.resp,.ex{break-inside:avoid}}
