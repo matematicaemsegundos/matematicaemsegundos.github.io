@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matematicaemsegundos.github.io/sitemap.xml
