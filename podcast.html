@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podcast · Matemática em Segundos</title>
+<meta name="description" content="Episódios curtos de Matemática em formato de conversa: curiosidades, matemáticos famosos, paradoxos, conteúdos e Matemática e tecnologia.">
+<link rel="canonical" href="https://matematicaemsegundos.github.io/podcast.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Matemática em Segundos">
+<meta property="og:title" content="Podcast · Matemática em Segundos">
+<meta property="og:description" content="Episódios curtos de Matemática em formato de conversa.">
+<meta property="og:url" content="https://matematicaemsegundos.github.io/podcast.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="./">Matemática em <b>Segundos</b></a>
+<nav><a href="./">Postagens</a><a href="podcast.html">Podcast</a><a href="sobre.html">Sobre o autor</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero">
+<h1>Podcast</h1>
+<p>Episódios curtos de Matemática, em formato de conversa entre Ana e Bruno. As vozes são geradas por computador; os textos são baseados nas postagens do blog.</p>
+</section>
+<p class="meta" id="status"></p>
+<div class="grid" id="lista"></div>
+</main>
+<footer><div class="wrap">© Professor Jonh Cleidson da Silva · Matemática em Segundos</div></footer>
+<script type="application/json" id="episodios">
+[
+{"data": "2026-11-09", "titulo": "Episódio 1: Quem escreve o Matemática em Segundos", "resumo": "Ana e Bruno apresentam o Professor Jonh Cleidson da Silva: mais de 30 anos de sala de aula e a clareza como marca.", "cor": "--vi", "duracao": "3 min 23 s", "audio": "assets/audio/2026-11-09-sobre-o-autor.mp3", "post": "sobre.html"}
+]
+</script>
+<script>
+(function(){
+var eps=JSON.parse(document.getElementById('episodios').textContent);
+eps.sort(function(a,b){return b.data.localeCompare(a.data)});
+var el=document.getElementById('lista'),st=document.getElementById('status');
+function fmt(d){var p=d.split('-');return p[2]+'/'+p[1]+'/'+p[0]}
+function esc(s){var x=document.createElement('div');x.textContent=s;return x.innerHTML}
+if(!eps.length){el.innerHTML='<p class="empty">Os primeiros episódios chegam em breve. Volte logo!</p>';return}
+st.textContent=eps.length+(eps.length==1?' episódio':' episódios');
+el.innerHTML=eps.map(function(e){return '<div class="card" style="--c:var('+e.cor+')"><small>'+fmt(e.data)+' · '+esc(e.duracao)+'</small><h3>'+esc(e.titulo)+'</h3><p>'+esc(e.resumo)+'</p><audio controls preload="none" src="'+e.audio+'"></audio>'+(e.post?'<p><a href="'+e.post+'">Ler o texto no blog</a></p>':'')+'</div>'}).join('');
+})();
+</script>
+</body>
+</html>
